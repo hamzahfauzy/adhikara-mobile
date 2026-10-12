@@ -50,7 +50,7 @@ try {
     $uriPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
 
     // URL publik menggunakan prefix /api/v1.
-    $prefix = '/api/v1';
+    $prefix = Env::get('API_PREFIX','/api');
 
     if ($uriPath === $prefix) {
         $routePath = '/';

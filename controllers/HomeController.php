@@ -54,7 +54,7 @@ final class HomeController
                 status,
                 notes
             FROM attendances
-            WHERE employee_id = :employee_id AND start_at IS NOT NULL AND end_at IS NOT NULL
+            WHERE  record_type = 'presence' AND employee_id = :employee_id AND start_at IS NOT NULL AND end_at IS NOT NULL
             ORDER BY created_at DESC
             LIMIT 5
         ");

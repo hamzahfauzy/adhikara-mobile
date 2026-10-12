@@ -27,7 +27,7 @@ final class AttendanceController
                 a.notes
             FROM attendances a
             LEFT JOIN placements p ON p.id = a.placement_id
-            WHERE a.employee_id = :employee_id AND a.start_at IS NOT NULL AND a.end_at IS NOT NULL
+            WHERE a.record_type = 'presence' AND a.employee_id = :employee_id AND a.start_at IS NOT NULL AND a.end_at IS NOT NULL
         ";
 
         $params = [
